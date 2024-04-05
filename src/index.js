@@ -5,7 +5,6 @@ import { allCommandsMap } from './commands/index.js';
 import { handleCommandsError } from './helpers/handleCommandsError.js';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-
 client.commands = buildCommands();
 
 client.once(Events.ClientReady, (readyClient) => {
