@@ -3,4 +3,5 @@ export const ERROR_TEXTS = {
   REFRESH_START: 'Started refreshing application (/) commands.',
   REFRESH_FINISH_OK: 'Successfully reloaded application (/) commands.',
   COMMAND_ERROR: 'There was an error while executing this command!',
+  COMMAND_WRONG_PARAM: 'This command had wrong parameters.',
 };

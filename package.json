@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "deploy:commands": "node src/deployCommands/deploy.js"
+    "deploy:commands": "node src/deployCommands/deploy.js",
+    "dev": "yarn deploy:commands && yarn start"
   },
   "keywords": [],
   "author": "",

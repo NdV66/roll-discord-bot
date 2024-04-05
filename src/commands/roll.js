@@ -1,12 +1,25 @@
 import { SlashCommandBuilder } from 'discord.js';
+import { TEXTS } from '../data/texts.js';
+import { rollService } from '../services/rollService.js';
+import { rollParser } from '../services/rollParser.js';
+import { ERROR_TEXTS } from '../data/errorTexts.js';
 
 const name = 'roll';
-const data = new SlashCommandBuilder().setName(name).setDescription('Replies with Pong!');
+const data = new SlashCommandBuilder()
+  .setName(name)
+  .setDescription(TEXTS.ROLL_DESCRIPTION)
+  .addStringOption((option) =>
+    option.setName('dice-type').setDescription(TEXTS.ROLL_PARAM_DESCRIPTION).setRequired(true),
+  );
 
 const execute = async (interaction) => {
-  await interaction.reply(
-    `This command was run by ${interaction.user.username}, who joined on ${interaction.member.joinedAt}.`,
-  );
+  const requestedRoll = interaction.options.getString('dice-type');
+  const isRequestRollInputOk = rollParser.validateRollInput(requestedRoll);
+
+  if (!isRequestRollInputOk) throw new Error(ERROR_TEXTS.COMMAND_WRONG_PARAM);
+  const rollResult = rollService.rollDie();
+
+  await interaction.reply(`RESULT: ${rollResult}, ${requestedRoll}.`);
 };
 
 export const rollCommand = {
