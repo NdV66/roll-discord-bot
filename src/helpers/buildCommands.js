@@ -1,4 +1,4 @@
-import { rollCommand } from '../commands/utility/roll.js';
+import { rollCommand } from '../commands/roll.js';
 import { Collection } from 'discord.js';
 
 export const buildCommands = () => {
