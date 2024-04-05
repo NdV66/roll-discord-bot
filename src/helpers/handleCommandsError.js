@@ -1,7 +1,7 @@
 import { ERROR_TEXTS } from '../data/errorTexts.js';
 import { logger } from './logger.js';
 
-export const handleCommandsError = async (error) => {
+export const handleCommandsError = async (error, interaction) => {
   logger.error(error);
 
   const body = {

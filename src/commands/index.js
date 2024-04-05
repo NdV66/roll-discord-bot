@@ -1,5 +1,9 @@
 import { rollCommand } from './roll.js';
+import { rollsCommand } from './rolls.js';
 
-export const allCommands = [rollCommand];
+export const allCommandsMap = new Map([
+  [rollCommand.name, rollCommand],
+  [rollsCommand.name, rollsCommand],
+]);
 
-export const allCommandsMap = new Map([[rollCommand.name, rollCommand]]);
+export const allCommands = allCommandsMap.values();

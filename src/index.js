@@ -4,6 +4,8 @@ import { ENV } from '../envHelper.js';
 import { allCommandsMap } from './commands/index.js';
 import { handleCommandsError } from './helpers/handleCommandsError.js';
 import { logger } from './helpers/logger.js';
+import { DICE_IDS } from './data/diceIds.js';
+import { handleDiceButtonClick } from './commands/handleDiceButtonClick.js';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 client.commands = buildCommands();
@@ -13,13 +15,18 @@ client.once(Events.ClientReady, (readyClient) => {
 });
 
 client.on(Events.InteractionCreate, async (interaction) => {
-  if (!interaction.isChatInputCommand()) return;
-  const command = allCommandsMap.get(interaction.commandName);
+  if (!interaction.isChatInputCommand() && !interaction.isButton()) return;
 
+  if (Object.values(DICE_IDS).includes(interaction.customId)) {
+    handleDiceButtonClick(interaction, interaction.customId);
+    return;
+  }
+
+  const command = allCommandsMap.get(interaction.commandName);
   try {
     await command.execute(interaction);
   } catch (error) {
-    await handleCommandsError(error);
+    await handleCommandsError(error, interaction);
   }
 });
 
