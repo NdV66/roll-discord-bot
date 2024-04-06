@@ -17,7 +17,7 @@ const execute = async (interaction) => {
 
   const row = new ActionRowBuilder().addComponents(rollD20, rollD12, rollD8, rollD6, rollD4);
   await interaction.reply({
-    content: 'Tu na razie jest sciernisko, ale będzie ROLLOWISKO!',
+    content: TEXTS.ROLLS_MENU_DESCRIPTION,
     components: [row],
   });
 };

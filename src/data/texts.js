@@ -3,7 +3,7 @@ export const TEXTS = {
   ROLL_PARAM_DESCRIPTION: 'Describe your dice, for example: 6d20',
 
   ROLLS_DESCRIPTION: 'Run to see die menu.',
-
+  ROLLS_MENU_DESCRIPTION: 'Click a button to make to roll',
   D_20_ROLL: 'Roll d20',
   D_12_ROLL: 'Roll d12',
   D_8_ROLL: 'Roll d8',

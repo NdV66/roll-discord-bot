@@ -1,5 +1,4 @@
 import { Client, Events, GatewayIntentBits } from 'discord.js';
-import { buildCommands } from './helpers/buildCommands.js';
 import { ENV } from '../envHelper.js';
 import { allCommandsMap } from './commands/index.js';
 import { handleCommandsError } from './helpers/handleCommandsError.js';
@@ -8,7 +7,6 @@ import { DICE_IDS } from './data/diceIds.js';
 import { handleDiceButtonClick } from './commands/handleDiceButtonClick.js';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-client.commands = buildCommands();
 
 client.once(Events.ClientReady, (readyClient) => {
   logger.log(`Ready! Logged in as ${readyClient.user.tag}`);
