@@ -1,5 +1,7 @@
 /** @type {import('jest').Config} */
 
 export default {
-  /* config here */
+  testEnvironment: 'node',
+  transform: {},
+  transformIgnorePatterns: ['node_modules/(?!variables/.*)'],
 };
