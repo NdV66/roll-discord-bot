@@ -1,4 +1,8 @@
 # About the bot
+## Ok, but why?
+## Available commands (in Discord)
+- `/rolls` - call to show (and use) basic rolls menu (d20, d12, d8, d6 and d4)
+- `/roll XdY` (for example: `/roll 2d6`) - call it to have advanced rolls, in this case (`/roll 2d6`) to roll 2 x d6
 
 # Local setup
 ## What is required
