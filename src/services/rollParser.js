@@ -1,4 +1,4 @@
-const ROLL_REGEXP = /^([1-9]+[0-9]*)d([2-9]+[0-9]*)$/;
+const ROLL_REGEXP = /(^[1-9]+[0-9]*)d(([2-9]+)|([1-9]+[0-9]+))$/;
 
 const validateRollInput = (value) => ROLL_REGEXP.test(value);
 

@@ -22,4 +22,8 @@ describe('RollService', () => {
       expect(result).toBeLessThanOrEqual(max);
     });
   });
+
+  describe('rollDie', () => {
+    const cases = [[]];
+  });
 });

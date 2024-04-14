@@ -48,11 +48,4 @@ describe('RollParser', () => {
         shouldReturnNullWhenGivenValueIsWrong(el)),
     );
   });
-
-  //   describe('validateRollInput(value)', () => {
-  //     it('Should ', () => {
-  //       const value = '1d8';
-  //       const result = rollParser.validateRollInput(value);
-  //     });
-  //   });
 });
