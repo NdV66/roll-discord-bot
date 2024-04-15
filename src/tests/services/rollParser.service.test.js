@@ -31,6 +31,9 @@ describe('RollParser', () => {
     );
 
     const wrongValues = [
+      '0d6',
+      'd9',
+      '3d0',
       '-5d6',
       'd6',
       '0d8',
