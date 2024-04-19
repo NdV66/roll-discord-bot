@@ -1,5 +1,4 @@
 import { rollParser } from '../../services/rollParser.js';
-import { jest } from '@jest/globals';
 
 const shouldReturnNullWhenGivenValueIsWrong = (value) => {
   //given
