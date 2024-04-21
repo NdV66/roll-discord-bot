@@ -7,3 +7,11 @@ export const DICE_IDS = {
   D_6_BUTTON: 'd6button',
   D_4_BUTTON: 'd4button',
 };
+
+export const buttonTypesMap = new Map([
+  [DICE_IDS.D_20_BUTTON, 20],
+  [DICE_IDS.D_12_BUTTON, 12],
+  [DICE_IDS.D_8_BUTTON, 8],
+  [DICE_IDS.D_6_BUTTON, 6],
+  [DICE_IDS.D_4_BUTTON, 4],
+]);
