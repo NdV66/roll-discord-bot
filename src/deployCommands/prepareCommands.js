@@ -1,8 +1,6 @@
-import { logger } from '../helpers/logger.js';
-import { allCommands } from '../commands/index.js';
 import { ERROR_TEXTS } from '../data/errorTexts.js';
 
-export const prepareCommands = () => {
+export const prepareCommands = (allCommands, logger) => {
   const commands = [];
 
   for (let command of allCommands) {
