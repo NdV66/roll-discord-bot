@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "start": "node src/index.js",
+    "start": "node src/app.js",
     "deploy:commands": "node src/deployCommands/deploy.js",
     "dev": "yarn deploy:commands && yarn start"
   },

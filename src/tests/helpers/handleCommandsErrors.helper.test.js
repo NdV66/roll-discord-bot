@@ -17,7 +17,7 @@ const body = {
 const shouldCallFollowUp = async (interaction) => {
   //given
   //when
-  await handleCommandsError({}, interaction);
+  await handleCommandsError({}, interaction, false);
   //then
   expect(interaction.followUp).toHaveBeenCalledTimes(1);
   expect(interaction.followUp).toHaveBeenCalledWith(body);
@@ -43,7 +43,7 @@ describe('handleCommandsError', () => {
   it('Should call interaction.reply()', async () => {
     //given
     //when
-    await handleCommandsError({}, interactionMock);
+    await handleCommandsError({}, interactionMock, false);
     //then
     expect(interactionMock.reply).toHaveBeenCalledTimes(1);
     expect(interactionMock.reply).toHaveBeenCalledWith(body);
