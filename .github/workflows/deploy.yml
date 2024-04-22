@@ -39,7 +39,7 @@ jobs:
           server: ${{ secrets.FTP_API_HOST }}
           username: ${{ secrets.FTP_API_USER }}
           password: ${{ secrets.FTP_API_PASSWORD }}
-          server-dir: /roll-bot.narin.dev/public_nodejs/
+          server-dir: /public_nodejs/
           protocol: ftp
           local-dir: dist/
 
