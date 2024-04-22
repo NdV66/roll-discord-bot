@@ -1,5 +1,9 @@
 name: DEV Deploy
 
+on:
+  push:
+    branches: [dev]
+
 jobs:
   build-and-deploy:
     name: Build and deploy
