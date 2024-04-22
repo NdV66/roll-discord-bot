@@ -17,9 +17,9 @@ const execute = async (interaction) => {
   const isRequestRollInputOk = rollParser.validateRollInput(requestedRoll);
 
   if (!isRequestRollInputOk) throw new Error(ERROR_TEXTS.COMMAND_WRONG_PARAM);
-  const rollResult = rollService.rollDie().join(', ');
+  const rollResult = rollService.rollDie(requestedRoll);
 
-  await interaction.reply(`RESULT: ${rollResult}, ${requestedRoll}.`);
+  if (rollResult) await interaction.reply(`RESULT: ${rollResult.join(', ')}, ${requestedRoll}.`);
 };
 
 export const rollCommand = {
