@@ -8,7 +8,9 @@
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "start": "node src/app.js",
     "deploy:commands": "node src/deployCommands/deploy.js",
-    "dev": "yarn deploy:commands && yarn start"
+    "dev": "yarn deploy:commands && yarn start",
+    "build": "rm -rf dist && mkdir dist && cp -R node_modules src .env envHelper.js dist",
+    "start:dist": "node dist/src/app.js"
   },
   "keywords": [],
   "author": "",
