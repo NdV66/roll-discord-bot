@@ -1,4 +1,4 @@
-import { rollParser } from './rollParser';
+import { rollParser } from './rollParser.js';
 
 const rollDieWithMaxValue = (max, min = 1) => min + Math.floor(Math.random() * (max - min + 1));
 
