@@ -1,4 +1,4 @@
-name: 🚀 Deploy website on push [DEV]
+name: 🚀 Deploy website on push [PROD]
 
 on:
   push:
@@ -8,18 +8,17 @@ on:
 jobs:
   web-deploy:
 
-    name: 🚀 Deploy RollBot [DEV]
+    name: 🚀 Deploy RPG Token Demo App
     runs-on: ubuntu-latest
 
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
 
-    - name: 😎 Use Node.js v21
-        uses: actions/setup-node@v3
-        with:
-          node-version: '21.2.0'
-          cache: npm
+    - name: 😎 Use Node.js 18 LTE
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
 
     - name: 🧰 Install NPM Modules
       run: npm install
@@ -30,10 +29,9 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ${{ secrets.FTP_API_HOST }}
-        username: ${{ secrets.FTP_API_USER }}
-        password: ${{ secrets.FTP_API_PASSWORD }}
-        local-dir: ./dist/
-        server-dir: ${{ secrets.FTP_PROD_DIR }}
+        server: ${{ secrets.PROD_SERVER }}
+        username: ${{ secrets.PROD_USER }}
+        password: ${{ secrets.PROD_PASSWORD }}
+        local-dir: ./build/
+        server-dir: ${{ secrets.PROD_DIR }}
         dangerous-clean-slate: true
-        protocol: ftp
