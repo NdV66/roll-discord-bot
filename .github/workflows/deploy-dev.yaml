@@ -15,7 +15,7 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
 
-    - name: 😎 Use Node.js 18 LTE
+    - name: 😎 Use Node.js v21
       uses: actions/setup-node@v3
       with:
         node-version: '21'
