@@ -32,6 +32,6 @@ jobs:
         server: ${{ secrets.FTP_API_HOST }}
         username: ${{ secrets.FTP_API_USER }}
         password: ${{ secrets.FTP_API_PASSWORD }}
-        local-dir: ./build/
+        local-dir: ./dist/
         server-dir: ${{ secrets.FTP_PROD_DIR }}
         dangerous-clean-slate: true
