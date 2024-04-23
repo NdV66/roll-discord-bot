@@ -1,4 +1,4 @@
-name: 🚀 Deploy website on push [PROD]
+name: 🚀 Deploy website on push [DEV]
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 jobs:
   web-deploy:
 
-    name: 🚀 Deploy RPG Token Demo App
+    name: 🚀 Deploy Roll Discord Bot
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +18,7 @@ jobs:
     - name: 😎 Use Node.js 18 LTE
       uses: actions/setup-node@v3
       with:
-        node-version: '18'
+        node-version: '21'
 
     - name: 🧰 Install NPM Modules
       run: npm install
@@ -29,9 +29,9 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ${{ secrets.PROD_SERVER }}
-        username: ${{ secrets.PROD_USER }}
-        password: ${{ secrets.PROD_PASSWORD }}
+        server: ${{ secrets.FTP_API_HOST }}
+        username: ${{ secrets.FTP_API_USER }}
+        password: ${{ secrets.FTP_API_PASSWORD }}
         local-dir: ./build/
-        server-dir: ${{ secrets.PROD_DIR }}
+        server-dir: ${{ secrets.FTP_PROD_DIR }}
         dangerous-clean-slate: true
