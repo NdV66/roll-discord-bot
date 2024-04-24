@@ -6,12 +6,12 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "start": "node src/app.js",
+    "start": "node app.js",
     "deploy:commands": "node src/deployCommands/deploy.js",
     "dev": "yarn deploy:commands && yarn start",
-    "build:clean": "rm -rf dist && mkdir dist && cp -R node_modules src .env envHelper.js dist",
+    "build:clean": "rm -rf dist && mkdir dist && cp -R node_modules src .env envHelper.js app.js dist",
     "build": "mkdir dist && cp -R node_modules src envHelper.js dist",
-    "start:dist": "node dist/src/app.js"
+    "start:dist": "node dist/app.js"
   },
   "keywords": [],
   "author": "",

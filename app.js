@@ -1,11 +1,12 @@
 import { Client, Events, GatewayIntentBits } from 'discord.js';
-import { ENV } from '../envHelper.js';
-import { allCommandsMap } from './commands/index.js';
-import { handleCommandsError } from './helpers/handleCommandsError.js';
-import { logger } from './helpers/logger.js';
-import { DICE_IDS } from './data/diceIds.js';
-import { handleDiceButtonClick } from './commands/handleDiceButtonClick.js';
-import { rollService } from './services/rollService.js';
+
+import { ENV } from './envHelper.js';
+import { allCommandsMap } from './src/commands/index.js';
+import { handleCommandsError } from './src/helpers/handleCommandsError.js';
+import { logger } from './src/helpers/logger.js';
+import { DICE_IDS } from './src/data/diceIds.js';
+import { handleDiceButtonClick } from './src/commands/handleDiceButtonClick.js';
+import { rollService } from './src/services/rollService.js';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
