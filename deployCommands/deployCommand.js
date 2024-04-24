@@ -1,5 +1,5 @@
 import { Routes } from 'discord.js';
-import { ENV } from '../../envHelper.js';
+import { ENV } from '../envHelper.js';
 import { ERROR_TEXTS } from '../data/errorTexts.js';
 
 export const deployCommand = async (rest, commands, logger) => {
