@@ -2,15 +2,15 @@
   "name": "rpg-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "start": "node app.js",
-    "deploy:commands": "node src/deployCommands/deploy.js",
+    "deploy:commands": "node deployCommands/deploy.js",
     "dev": "yarn deploy:commands && yarn start",
     "build:clean": "rm -rf dist && yarn build",
-    "build": "mkdir dist && cp -R node_modules envHelper.js app.js src/commands src/data src/deployCommands src/helpers src/services dist",
+    "build": "mkdir dist && cp -R node_modules envHelper.js app.js commands data deployCommands helpers services dist",
     "start:dist": "node dist/app.js"
   },
   "keywords": [],
