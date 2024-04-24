@@ -10,7 +10,7 @@
     "deploy:commands": "node deployCommands/deploy.js",
     "dev": "yarn deploy:commands && yarn start",
     "build:clean": "rm -rf dist && yarn build",
-    "build": "mkdir dist && cp -R node_modules envHelper.js app.js commands data deployCommands helpers services dist",
+    "build": "mkdir dist && cp -R node_modules envHelper.js app.js commands data deployCommands helpers services package.json dist",
     "start:dist": "node dist/app.js"
   },
   "keywords": [],
